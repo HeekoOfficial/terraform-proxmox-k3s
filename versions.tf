@@ -10,8 +10,5 @@ terraform {
       version = "0.3.0"
     }
   }
-locals {
-   authorized_keyfile = "authorized_keys"
- }
 }
 
