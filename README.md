@@ -2,6 +2,8 @@
 
 A module for spinning up an expandable and flexible K3s server for your HomeLab.
 
+Forked to work with new versions of K3S
+
 ## Features
 
 - Fully automated. No need to remote into a VM; even for a kubeconfig
