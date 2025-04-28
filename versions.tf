@@ -11,7 +11,4 @@ terraform {
     }
   }
 }
-locals {
-  authorized_keyfile = "authorized_keys"
-}
 
