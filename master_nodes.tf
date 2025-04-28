@@ -3,18 +3,22 @@ resource "macaddress" "k3s-masters" {
 }
 
 locals {
-  master_node_settings = defaults(var.master_node_settings, {
-    cores          = 2
-    sockets        = 1
-    memory         = 4096
-    storage_type   = "scsi"
-    storage_id     = "local-lvm"
-    disk_size      = "20G"
-    user           = "k3s"
-    network_bridge = "vmbr0"
-    network_tag    = -1
-  })
-
+  support_node_settings = merge(
+    {
+      cores         = 2
+      sockets       = 1
+      memory        = 4096
+      storage_type  = "scsi"
+      storage_id    = "local-lvm"
+      disk_size     = "10G"
+      user          = "support"
+      network_tag   = -1
+      db_name       = "k3s"
+      db_user       = "k3s"
+      network_bridge = "vmbr0"
+    },
+    var.support_node_settings
+)
   master_node_ips = [for i in range(var.master_nodes_count) : cidrhost(var.control_plane_subnet, i + 1)]
 }
 
