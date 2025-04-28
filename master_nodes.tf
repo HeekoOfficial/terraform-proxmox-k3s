@@ -3,7 +3,7 @@ resource "macaddress" "k3s-masters" {
 }
 
 locals {
-  support_node_settings = merge(
+  master_node_settings = merge(
     {
       cores         = 2
       sockets       = 1
