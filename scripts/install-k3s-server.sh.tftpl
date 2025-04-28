@@ -2,6 +2,7 @@ export HTTP_PROXY="${http_proxy}"
 export HTTPS_PROXY="${http_proxy}"
 export http_proxy="${http_proxy}"
 export https_proxy="${http_proxy}"
+export INSTALL_K3S_VERSION="v1.32.3+k3s1"  # Added version specification
 
 curl -sfL https://get.k3s.io | sh -s - ${mode} \
 %{ for component in disable ~}
