@@ -1,9 +1,11 @@
 terraform {
   required_providers {
     proxmox = {
-      source  = "Telmate/proxmox"
-      version = "2.9.3"
+      source  = "bpg/proxmox"
+      version = "~> 0.38.1" # Ensure compatibility with Heeko module
     }
+  }
+}
 
     macaddress = {
       source  = "ivoronin/macaddress"
