@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     proxmox = {
-      source  = "bpg/proxmox"
-      version = "~> 0.38.1"
+      source  = "Telmate/proxmox"
+      version = ">= 2.9.14"
     }
 
     macaddress = {
